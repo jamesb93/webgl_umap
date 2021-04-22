@@ -9,7 +9,7 @@
 	<body>
 		<div id="info">
 			dimensionality reduction using <a href="https://umap-learn.readthedocs.io/en/latest/" target="blank">MFCC analysis and UMAP</a><br>
-			The full code is available here <a href="https://github.com/jamesb93/ptolemy" target="blank">at my github</a><br>
+			The full code is available here <a href="https://github.com/jamesb93/webgl_umap" target="blank">at my github</a><br>
 			<strong>Left Click - Rotate | Right Click - Drag Scene | Scroll - Zoom</strong><br>
 			<i>Mouseover points to hear the sample</i>
 		</div>
@@ -134,7 +134,7 @@
 				var material = new THREE.ShaderMaterial({
 					uniforms: {
 						color: {value: new THREE.Color(0xffffff)},
-						pointTexture: {value: new THREE.TextureLoader().load( "textures/sprites/circle.png")}
+						pointTexture: {value: new THREE.TextureLoader().load( "/textures/sprites/circle.png")}
 					},
 					vertexShader: document.getElementById( 'vertexshader' ).textContent,
 					fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
@@ -229,7 +229,7 @@
 						attributes.size.array[INTERSECTED] = params.baseParticleSize * 4;
 						attributes.size.needsUpdate = true;
 
-						if (data[INTERSECTED].name) {
+						if (data[INTERSECTED].file) {
 							audioLoader.load( '/audio/' + data[INTERSECTED].file, 
 							buffer => {
 								sound.setBuffer(buffer);
